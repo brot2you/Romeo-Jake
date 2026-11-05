@@ -1,2 +1,1 @@
-ROMÉO JAKE — V5 Grand écran
-Ouvrez index.html dans un navigateur. Le livre utilise presque toute la largeur du PC. Cliquez sur « Plein écran » pour une lecture immersive. Sur petits écrans PC, le contenu de la page de droite défile si nécessaire, sans déborder du livre.
+Ouvrir index.html pour lancer le livre. La couverture a été remplacée par la nouvelle illustration. Aucun ancien texte superposé.
