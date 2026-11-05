@@ -69,6 +69,56 @@ body:fullscreen .app,.app:fullscreen{height:100dvh;min-height:0;background:radia
 .narration,.read-text,.reading{hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:normal!important}
 .narration{white-space:normal;letter-spacing:normal!important;word-spacing:normal!important}
 .narration strong{letter-spacing:.04em}
+
+/* V15 — smartphone portrait et paysage, sans rognage */
+@media(max-width:780px) and (orientation:portrait){
+ .app{width:100%;max-width:100%;padding:8px 8px 16px}
+ .toolbar{gap:8px}
+ .settings{width:100%;gap:6px;justify-content:center}
+ .settings label{font-size:11px}
+ .settings select,.settings button{padding:8px;font-size:12px}
+ .book:not(.covermode){display:block;height:auto!important;min-height:0!important;max-width:100%;overflow:hidden}
+ .book:not(.covermode) .left{display:none}
+ .book:not(.covermode) .right{height:auto;min-height:0}
+ .book:not(.covermode) .mobile-art{display:block;height:clamp(185px,55vw,350px);background:#000}
+ .book:not(.covermode) .reading{height:auto;overflow:visible;max-height:none;padding:14px}
+ .nav{gap:7px;flex-wrap:nowrap}
+ .nav button{padding:10px 9px;font-size:12px}
+ .count{min-width:48px;font-size:12px}
+}
+@media(orientation:landscape) and (max-height:650px) and (pointer:coarse){
+ html,body{min-width:0;overflow-x:hidden}
+ .app{width:100%!important;max-width:none!important;min-height:100dvh!important;padding:5px 7px 8px!important;display:flex;flex-direction:column}
+ .toolbar{margin-bottom:6px!important;padding:5px 9px!important;gap:6px;flex-wrap:nowrap}
+ .brand{font-size:clamp(13px,2.2vw,19px);white-space:nowrap}
+ .brand small{font-size:8px;letter-spacing:.5px}
+ .settings{width:auto!important;flex:1;justify-content:flex-end;gap:5px;flex-wrap:wrap}
+ .settings label{display:none}
+ .settings select,.settings button{font-size:clamp(10px,1.5vw,13px);padding:6px 8px}
+ .stage{display:flex!important;flex:1 1 auto;min-height:0;align-items:stretch}
+ .book{width:100%!important;max-width:none!important;height:calc(100dvh - 105px)!important;min-height:210px!important;display:grid!important;grid-template-columns:minmax(0,48%) minmax(0,52%)!important;overflow:hidden}
+ .book:not(.covermode) .left{display:block!important;min-width:0}
+ .book:not(.covermode) .right{height:100%!important;min-height:0;overflow:hidden}
+ .book:not(.covermode) .mobile-art{display:none!important}
+ .book:not(.covermode) .reading{height:100%!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;padding:clamp(9px,1.5vw,16px)!important;gap:7px!important}
+ .reading h1{font-size:clamp(19px,2.6vw,28px)!important}
+ .chapter{font-size:10px}
+ .narration{font-size:clamp(14px,1.9vw,18px)!important;line-height:1.38!important;padding:9px!important}
+ .read-text{font-size:clamp(18px,2.5vw,26px)!important;padding:9px!important;min-height:0!important}
+ .reader-tools button{font-size:11px;padding:7px}
+ .challenge{padding:8px}
+ .challenge p{font-size:12px}
+ .answers button{font-size:15px;padding:6px;min-width:38px}
+ .scene-title{font-size:13px!important;bottom:9px;left:9px;padding:6px 9px}
+ .nav{margin-top:7px!important;gap:9px}
+ .nav button{font-size:12px;padding:7px 12px}
+ .count{min-width:50px;font-size:12px}
+ .help{display:none}
+ .book.covermode{display:block!important;position:relative!important;height:calc(100dvh - 105px)!important;min-height:210px!important}
+ .book.covermode .cover{display:flex!important;position:absolute!important;inset:0!important;background-size:contain!important;background-position:center!important}
+ .flip{left:50%;width:50%}
+ .flip.backwards{left:0}
+}
 </style></head><body><div class="app"><header class="toolbar"><div class="brand">✦ ROMÉO JAKE <small>LE PETIT PIRATE DES RÊVES</small></div><div class="settings"><label for="level">Niveau de lecture</label><select id="level"><option value="CP">CP</option><option value="CE1">CE1</option><option value="CE2">CE2</option><option value="CM1">CM1</option><option value="CM2">CM2</option></select><button id="colors" aria-pressed="true">🎨 Repères visuels</button><button id="fullscreen" title="Afficher en plein écran">⛶ Plein écran</button><button id="home">⌂ Couverture</button></div></header><main class="stage"><div class="book" id="book"></div></main><nav class="nav"><button id="prev">❮ Page précédente</button><span class="count" id="count">Couverture</span><button id="next">Page suivante ❯</button></nav><p class="help">Tourne les pages avec les flèches ou en glissant le doigt. Le récit est mis en avant ; les exercices restent séparés.</p></div><script>
 /* V14 — corrected apostrophe handling across all reading levels */
 const pages=[
