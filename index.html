@@ -119,6 +119,35 @@ body:fullscreen .app,.app:fullscreen{height:100dvh;min-height:0;background:radia
  .flip{left:50%;width:50%}
  .flip.backwards{left:0}
 }
+
+/* V16 — paysage smartphone : texte enfant jamais ecrase */
+@media(orientation:landscape) and (max-height:650px) and (pointer:coarse){
+ .book:not(.covermode) .reading{
+   display:flex!important;flex-direction:column!important;
+   justify-content:flex-start!important;align-items:stretch!important;
+   overflow-y:auto!important;overflow-x:hidden!important;
+   -webkit-overflow-scrolling:touch;
+   min-height:0!important;max-height:none!important;
+ }
+ .book:not(.covermode) .reading > *{
+   flex-shrink:0!important;min-height:max-content;
+ }
+ .book:not(.covermode) .read-text{
+   display:block!important;flex:0 0 auto!important;
+   width:100%!important;height:auto!important;min-height:max-content!important;
+   max-height:none!important;overflow:visible!important;
+   font-size:clamp(20px,2.8vw,27px)!important;
+   line-height:1.45!important;letter-spacing:normal!important;
+   white-space:normal!important;text-align:center!important;
+   padding:12px 10px!important;
+   word-break:normal!important;overflow-wrap:break-word!important;
+ }
+ .book:not(.covermode) .read-text .plain{
+   display:inline!important;white-space:normal!important;
+ }
+ .book:not(.covermode) .reader-tools,
+ .book:not(.covermode) .challenge{height:auto!important;min-height:max-content!important}
+}
 </style></head><body><div class="app"><header class="toolbar"><div class="brand">✦ ROMÉO JAKE <small>LE PETIT PIRATE DES RÊVES</small></div><div class="settings"><label for="level">Niveau de lecture</label><select id="level"><option value="CP">CP</option><option value="CE1">CE1</option><option value="CE2">CE2</option><option value="CM1">CM1</option><option value="CM2">CM2</option></select><button id="colors" aria-pressed="true">🎨 Repères visuels</button><button id="fullscreen" title="Afficher en plein écran">⛶ Plein écran</button><button id="home">⌂ Couverture</button></div></header><main class="stage"><div class="book" id="book"></div></main><nav class="nav"><button id="prev">❮ Page précédente</button><span class="count" id="count">Couverture</span><button id="next">Page suivante ❯</button></nav><p class="help">Tourne les pages avec les flèches ou en glissant le doigt. Le récit est mis en avant ; les exercices restent séparés.</p></div><script>
 /* V14 — corrected apostrophe handling across all reading levels */
 const pages=[
