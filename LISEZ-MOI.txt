@@ -1,10 +1,6 @@
-ROMÉO JAKE — TOME 1 : LE SECRET DU PLACARD
-
-Ouvrir index.html dans Chrome, Safari, Edge ou Firefox.
-Pour publier sur GitHub Pages : déposer index.html et le dossier assets à la racine du dépôt, puis activer Pages.
-
-Fonctionnalités : 12 pages, défis de décodage, lecture vocale française si prise en charge par l'appareil, sauvegarde locale, navigation tactile, clavier et boutons.
-
-Cette version utilise une illustration originale commune aux pages avec différents cadrages et ambiances. Les scènes n'ont pas encore chacune une illustration indépendante.
-
-Note pédagogique : les défis proposés portent sur un premier ensemble de correspondances simples (a, i, m, l). Adapter à la progression réelle de l'enfant ; les récits sont destinés à être lus par l'adulte ou par la synthèse vocale.
+ROMÉO JAKE — TOME 1 — LIVRE INTERACTIF V3
+Ouvrir index.html dans Chrome, Edge, Firefox ou Safari.
+Les commandes sont en dehors du livre. Sélectionner CP, CE1, CE2, CM1 ou CM2.
+Le code bicolore alterne des groupes de lettres à titre d'aide visuelle provisoire : ce n'est pas une segmentation phonologique validée. La progression CP est indicative et doit être adaptée aux graphèmes déjà appris.
+La voix utilise les voix de synthèse de l'appareil et peut dépendre de leur installation.
+Les scènes utilisent provisoirement une seule illustration : les illustrations spécifiques de chaque page restent à réaliser.
